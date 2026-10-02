@@ -1,0 +1,67 @@
+/* kiemtra.css — phần riêng trang KIỂM TRA ĐẦU VÀO (nền chung: css/nw.css chép từ andrewclasses.com). */
+[hidden] { display: none !important; }
+
+/* ===== màn đăng nhập (chép khối <style> của index.html andrewclasses.com) ===== */
+.dn-quen{margin:-4px 0 12px; text-align:right; font-size:13px}
+.dn-quen button{color:var(--accent); font-weight:700}
+.dn-quen button:hover{text-decoration:underline}
+.dn-o .id-eye svg{width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round}
+.dn-dieukhoan{margin:12px 0 0; font-size:11.5px; line-height:1.5; color:var(--muted); text-align:center}
+.dn-dieukhoan .ic-khoa{display:inline-block; width:14px; height:14px; vertical-align:-2px; margin-right:4px; color:var(--accent); fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round}
+.dn-dk{margin-top:16px; font-size:13.5px; display:flex; justify-content:center; align-items:center; gap:14px}
+.dn-dk button{color:var(--accent); font-weight:800}
+.dn-dk button:hover{text-decoration:underline}
+.kt-lienhe{margin-top:12px; padding:12px; border-radius:14px; background:var(--accent-soft); text-align:center; font-size:13px}
+.kt-lienhe p{margin:0 0 10px}
+.kt-lienhe-nut{display:flex; gap:8px; justify-content:center; flex-wrap:wrap}
+.kt-lienhe-nut .btn{text-decoration:none}
+
+/* ===== trang làm bài ===== */
+body.kt-bai{margin:0; background:#F1F5F4; color:#16232A; min-height:100vh}
+.kb-dau{position:sticky; top:0; z-index:20; display:flex; align-items:center; gap:12px; padding:10px max(16px, calc(50% - 470px)); background:rgba(255,255,255,.94); backdrop-filter:blur(8px); border-bottom:1px solid #E1EAE8}
+.kb-logo{display:flex; align-items:center; gap:10px; flex:1; min-width:0}
+.kb-logo img{width:36px; height:36px; border-radius:50%}
+.kb-logo b{font-size:17px; font-weight:800; line-height:1.05; display:block}
+.kb-logo small{display:block; font-size:10.5px; font-weight:800; letter-spacing:.16em; color:var(--accent)}
+.kb-em{display:flex; align-items:center; gap:8px; font-weight:700; font-size:14px; min-width:0}
+.kb-em span{white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:40vw}
+.kb-av{width:34px; height:34px; border-radius:50%; object-fit:cover; background:var(--accent-soft); display:inline-grid; place-items:center; color:var(--accent); font-weight:800; flex:none}
+.kb-thoat{border:0; background:#EEF4F3; border-radius:10px; padding:7px 12px; font:700 13px inherit; cursor:pointer; color:#16232A}
+.kb-thoat:hover{background:#E1EAE8}
+
+.kb-than{max-width:940px; margin:0 auto; padding:22px 16px 60px}
+.kb-chao{background:#fff; border-radius:20px; padding:22px 24px; display:flex; gap:18px; align-items:center; box-shadow:0 6px 24px rgba(16,40,40,.06)}
+.kb-chao .kb-av{width:72px; height:72px; font-size:28px}
+.kb-chao h1{margin:0 0 4px; font-size:24px}
+.kb-chao p{margin:0; color:var(--muted); line-height:1.5; font-size:14.5px}
+.kb-buoc{display:flex; gap:8px; margin:16px 0 4px}
+.kb-buoc a{flex:1; display:flex; align-items:center; gap:8px; background:#fff; border-radius:14px; padding:10px 12px; text-decoration:none; color:inherit; border:2px solid transparent; font-size:13px; font-weight:700; min-width:0}
+.kb-buoc a i{width:26px; height:26px; border-radius:50%; display:grid; place-items:center; background:#E1EAE8; font-style:normal; font-weight:800; flex:none; font-size:12px}
+.kb-buoc a span{white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.kb-buoc a[data-tt="mo"]{border-color:var(--accent)} .kb-buoc a[data-tt="mo"] i{background:var(--accent); color:#fff}
+.kb-buoc a[data-tt="xong"] i{background:#2E9E6B; color:#fff}
+.kb-buoc a[data-tt="khoa"]{opacity:.6}
+
+.kb-phan{margin-top:26px; scroll-margin-top:72px}
+.kb-phan-dau{display:flex; align-items:center; gap:10px; margin:0 4px 10px}
+.kb-phan-dau .so{font-size:11.5px; font-weight:800; letter-spacing:.14em; color:var(--accent)}
+.kb-phan-dau h2{margin:0; font-size:19px; flex:1}
+.kb-chip{font-size:12px; font-weight:800; border-radius:999px; padding:4px 10px; background:#E1EAE8; color:#5F7370; white-space:nowrap}
+.kb-chip[data-tt="xong"]{background:#E8F5EE; color:#1F7A50}
+.kb-chip[data-tt="mo"]{background:var(--accent-soft); color:var(--accent)}
+.kb-khung{position:relative; height:min(660px, calc(100vh - 110px)); min-height:480px; border-radius:20px; overflow:hidden; background:#fff; box-shadow:0 6px 24px rgba(16,40,40,.08)}
+.kb-khung iframe{width:100%; height:100%; border:0; display:block}
+.kb-khoa{position:absolute; inset:0; display:grid; place-items:center; text-align:center; color:#8AA09C; font-weight:700; padding:20px; background:repeating-linear-gradient(135deg,#fff 0 14px,#F7FAF9 14px 28px)}
+.kb-khoa svg{width:40px; height:40px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; display:block; margin:0 auto 8px}
+
+.kb-het{margin-top:30px; background:linear-gradient(135deg,#0E7C6E,#2E9E6B); color:#fff; border-radius:24px; padding:40px 24px; text-align:center; scroll-margin-top:80px; box-shadow:0 12px 40px rgba(14,124,110,.3)}
+.kb-het .sao{font-size:54px; line-height:1}
+.kb-het h2{margin:10px 0 6px; font-size:26px}
+.kb-het p{margin:0; font-size:16px; opacity:.95; line-height:1.5}
+
+@media (max-width:640px){
+  .kb-chao{flex-direction:column; text-align:center; padding:18px}
+  .kb-buoc a span{display:none} .kb-buoc a{justify-content:center}
+  .kb-khung{height:calc(100vh - 120px); min-height:520px; border-radius:16px}
+  .kb-em span{display:none}
+}
