@@ -36,6 +36,19 @@ sau một nút riêng ít dùng; (2) tạo kho riêng để khi gửi kết qu�
 
 **Lỗi gặp:** hàm tạo mã dùng `Uint8Array` chưa `getRandomValues` ở lượt đầu ⇒ mã toàn "aaaaaaaaaa" — bắt được ở bàn thử kho giả, đã sửa.
 
+## Chặng 4 (03/10/2026 chiều) — trang phụ huynh liệt kê TỪNG CÂU như sheet Excel (đúng + sai + giải thích)
+**Thầy:** trang đánh giá gửi phụ huynh phải có chi tiết câu nào sai, sai gì; câu đúng cũng liệt kê, trình bày như các sheet BT1/BT2/BT3 trong
+`12.9.2026 DUNG.xlsm` (STT · Cụm từ gốc · Bài làm · Nhận xét). Khác một chút: chỉ đúng/sai, KHÔNG cho điểm từng câu; % kết luận = câu đúng / tổng số câu.
+
+**Đã làm (`js/ktdv-bc.js` v2, bản chép ở myLesson web):**
+- Ảnh chụp `v:2`: mỗi bài có `ds:[{i,q,y,c,ok,g}]` = TẤT CẢ câu (thay `sai` cũ). Mỗi bài một khối mở sẵn: bảng STT · Đề · Con viết · Nhận xét
+  (✓ Đúng / ✗ Sai + lời giải thích + "Đáp án đúng"); câu sai nền hồng. Điện thoại: mỗi câu thành một thẻ xếp dọc. In/PDF mở hết.
+- Bỏ nhãn mức "Trung bình/Khá…" ở vòng tròn — chỉ còn "Tỉ lệ câu đúng" + `d / n câu` (+ màu vòng theo %). Thanh từng bài ghi "x/n câu đúng · %".
+- Lời giải thích câu sai (`goiY`): NHÁP tự động so từng từ (để trống · sai mạo từ a/an · dư/thiếu "s" · sai chính tả · thiếu/thừa từ · dùng từ chưa đúng) —
+  thầy sửa ngay trong ô (textarea) ở bản xem trước; lưu ở `ktdvBaoCao/{ID}.ghiChu["BT1:7"]`. Chưa sửa thì ảnh chụp lấy nháp.
+  Nháp chỉ là so chữ, không hiểu ngữ pháp sâu như lời Claude viết trong Excel (vd "chủ ngữ số nhiều phải dùng are") ⇒ thầy nên đọc lại câu sai trước khi gửi.
+**VIỆC ĐANG CHỜ:** thầy dùng thử trên dashboard thật + đọc lại nháp giải thích; có thể muốn Claude viết lời giải thích kỹ cho từng em (như skill kiemtradauvao) rồi đổ vào `ghiChu`.
+
 ## VIỆC ĐANG CHỜ
 - ✅ Luật `ktdvChiaSe` đã đăng (ruleset b16182de, `--kiem` 11/11), 2 repo đã push, live kiểm bằng tài liệu thử (đã xoá).
 - ⬜ Thầy thử Gửi phụ huynh bằng tài khoản thầy thật trên dashboard (phiên này chưa đăng nhập thầy được).
