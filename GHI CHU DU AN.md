@@ -60,6 +60,20 @@ sau một nút riêng ít dùng; (2) tạo kho riêng để khi gửi kết qu�
   Dữ liệu đọc bằng khoá quản trị, CHỈ ĐỌC; bàn thử kho giả chạy đúng `ktdv-ql.js` với dữ liệu thật (file thử đã xoá, không commit).
 **Giới hạn:** `correctText` chỉ là đáp án đầu trong danh sách chấp nhận ⇒ em viết từ đồng nghĩa (usually ↔ often) bị chấm sai và lời giải thích nói "đáp án dùng …" — thầy bấm Chi tiết giáo viên đổi Đúng/Sai khi cần.
 
+## Chặng 6 (03/10/2026 tối) — câu để trống · bỏ chữ "đáp án" trong lời giải thích · ĐƯỜNG CHO CLAUDE CHẤM LẠI
+**Thầy:** (1) chỗ để trống không ghi "Sai", vẫn ✗ đỏ + "Để trống" đỏ, bỏ dòng "Con để trống câu này", chỉ còn "Đáp án đúng: …"; (2) bỏ mọi chỗ nhắc "so với đáp án", "xem đáp án bên dưới để đối chiếu";
+(3) nhận xét cẩn thận như file Excel mẫu; (4) mở đường để thầy thỉnh thoảng yêu cầu Claude chấm lại bài của ai — xem ngày nào, em nào, rồi Claude can thiệp.
+**Đã làm:**
+- `js/ktdv-bc.js?v=4` (bản chép ở myLesson web): câu để trống ⇒ cột Con viết "—", cột Nhận xét "✗ Để trống" (đỏ) + "Đáp án đúng: …"; `goiY('', …)` trả rỗng. Lời giải thích viết lại giọng Excel
+  ("Sai số ít/nhiều: có số lượng “three” nên danh từ phải ở số nhiều: “library” → “libraries”", "Sai chia “to be”: chủ ngữ số nhiều phải dùng “are”", "Sai từ vựng: “laptop” không đúng nghĩa của “máy tính bỏ túi”…"),
+  KHÔNG còn chữ "đáp án"/"đối chiếu" trong lời giải thích (đo trên 103 câu sai thật: 0 câu dính). Thêm: phân biệt động từ chia he/she/it ↔ danh từ số nhiều, sai thì kèm từ chỉ thời gian của câu, sai loại từ (slow→slowly).
+  Ô sửa lời giải thích tự giãn dòng theo độ dài.
+- **Đường cho Claude:** `myLesson Web/tools/claude-cham-lai.js` — `--ds [--ngay D/M[/YYYY]] [--ten …]` liệt kê bài đã nộp theo NGÀY/tên (giờ VN, điểm từng bài, đã gửi PH / đã Claude chấm lại chưa);
+  `--xuat <ID>` xuất bài làm ra JSON (đề · con viết · đáp án · các đáp án chấp nhận · máy chấm) cho Claude đọc; `--ghi file.json` Claude ghi lời giải thích kỹ (`ghiChu["BT1:7"]`), nhận xét chung, đổi Đúng/Sai (`sua`)
+  vào `ktdvBaoCao/<ID>` + `claudeLuc`; `--go <ID>` gỡ phần Claude. Dashboard mở báo cáo là thấy dòng "Claude đã chấm lại ngày …" và lời giải thích của Claude thay nháp tự động.
+  Chỉ ĐỌC results/ktdvHoSo/assignments, chỉ GHI ktdvBaoCao. Link đã gửi PH KHÔNG tự đổi — thầy đọc lại rồi bấm "Cập nhật link PH". Đã thử --ghi/--go trên hồ sơ giả ZTESTCL (tạo rồi xoá sạch).
+**Cách thầy gọi Claude:** "chấm lại bài kiểm tra đầu vào của <tên> (hoặc ngày D/M)" → Claude chạy `--ds`, `--xuat`, đọc, viết lời giải thích kỹ, `--ghi`.
+
 ## VIỆC ĐANG CHỜ
 - ✅ Luật `ktdvChiaSe` đã đăng (ruleset b16182de, `--kiem` 11/11), 2 repo đã push, live kiểm bằng tài liệu thử (đã xoá).
 - ⬜ Thầy thử Gửi phụ huynh bằng tài khoản thầy thật trên dashboard (phiên này chưa đăng nhập thầy được).

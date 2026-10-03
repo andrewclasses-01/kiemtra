@@ -19,6 +19,8 @@ làm lần lượt 3 bài (BT1 cụm số ít · BT2 cụm số nhiều · BT3 t
 - `css/nw.css`, `assets/`, `js/app-check.js` — chép từ myLesson web.
 - `kq.html` + `js/kq.js` + `css/kq.css` — TRANG PHỤ HUYNH (không đăng nhập): `/kq?c=<mã>` đọc Firestore `ktdvChiaSe/<mã>` bằng REST, dựng bằng `js/ktdv-bc.js`.
   ⛔ `js/ktdv-bc.js` là BẢN CHÉP của myLesson web `js/ktdv-bc.js` (dashboard dùng chung) — sửa một bên phải chép sang bên kia.
+- **Claude chấm lại bài KT đầu vào (khi thầy yêu cầu):** `E:\LAP TRINH APP\myLesson Web\tools\claude-cham-lai.js` — `--ds [--ngay D/M] [--ten …]` xem ai nộp ngày nào ·
+  `--xuat <ID>` ra JSON để đọc · `--ghi file.json` ghi lời giải thích kỹ như cột "Nhận xét" Excel + đổi Đúng/Sai vào `ktdvBaoCao/<ID>` · `--go <ID>` gỡ. Chi tiết đầu file tool. Link PH đã gửi chỉ đổi khi thầy bấm "Cập nhật link PH".
 - Logic làm bài (hướng dẫn, làm thử, lưu tiến độ, lượt dở, khoá đã nộp) nằm ở repo AWord: `kiemtra.js` / `kiemtra.css`.
 
 ## Khám phá quan trọng
