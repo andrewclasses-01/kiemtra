@@ -79,10 +79,12 @@ sau một nút riêng ít dùng; (2) tạo kho riêng để khi gửi kết qu�
 - Claude chấm lại em **Ngọc Ánh** (ID NGOCANH20102016, nộp 2/10: BT1 6/40 · BT2 1/20 · BT3 0/50 = 7/110): giữ NGUYÊN đúng/sai của máy (đã soi 103 câu sai: đều sai thật — thiếu a/an, chính tả, bỏ trống, sai nghĩa;
   đáp án chấp nhận không có câu nào em viết trúng). Ghi 58 lời giải thích kỹ cho mọi câu sai có chữ (câu để trống không viết) + nhận xét ưu điểm / hạn chế + gợi ý, `claudeLuc` 3/10/2026 19:47.
 - Nâng giới hạn lời giải thích 240 → 420 ký tự (`ktdv-ql.js?v=6`, tool `--ghi`), web v1.243.0, `config.js?v=224`.
-- ⬜ Bản link phụ huynh của em này CHƯA tạo (em chưa có token) — thầy mở báo cáo đọc lại rồi bấm "Gửi phụ huynh" khi muốn gửi.
+- Link phụ huynh của em này ĐÃ gửi (token h7pkwfbx8z).
 
 ## VIỆC ĐANG CHỜ
 - ✅ Luật `ktdvChiaSe` đã đăng (ruleset b16182de, `--kiem` 11/11), 2 repo đã push, live kiểm bằng tài liệu thử (đã xoá).
 - ⬜ Thầy thử Gửi phụ huynh bằng tài khoản thầy thật trên dashboard (phiên này chưa đăng nhập thầy được).
 - Thử bằng tài khoản KT đầu vào thật (có vé): làm dở + Làm lại + nộp ⇒ xem dashboard.
 - Thử điện thoại thật (mở link `kq?c=…` trên Zalo/Safari).
+- **Bổ sung (03/10 tối):** thầy gửi link `kq?c=h7pkwfbx8z` (Ngọc Ánh) rồi yêu cầu BỎ mọi lưu ý viết hoa / dấu cách / dấu câu, không chấm quá gắt ⇒ Claude sửa 5 lời giải thích (BT3:1, 27, 33, 34, 47) và thêm lệnh
+  `claude-cham-lai.js --cap-nhat-link <ID>` (cập nhật nội dung link ĐÃ GỬI theo ktdvBaoCao, giữ nguyên token; phụ huynh bấm link cũ là thấy bản mới). Quy ước chấm mới: KHÔNG nhắc lỗi viết hoa / khoảng trắng / dấu câu trong lời giải thích.
