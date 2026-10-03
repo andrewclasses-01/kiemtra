@@ -1,0 +1,22 @@
+/* kq.css — trang PHỤ HUYNH xem kết quả (kq.html). Phần giao diện báo cáo nằm trong js/ktdv-bc.js (.kqp). */
+:root { --font: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #EAF1F0; color: #16232A; font-family: var(--font); min-height: 100vh; }
+.kq-trang { max-width: 760px; margin: 0 auto; padding: 16px 12px 40px; }
+.kq-hop { background: #fff; border-radius: 20px; padding: 24px 26px 22px; box-shadow: 0 6px 30px rgba(14, 60, 54, .10); }
+.kq-cho, .kq-loi { padding: 56px 12px; text-align: center; color: #5F7370; font-size: 15px; }
+.kq-loi b { display: block; font-size: 17px; color: #16232A; margin-bottom: 6px; }
+.kq-xoay { width: 34px; height: 34px; margin: 0 auto 12px; border-radius: 50%; border: 4px solid #D8E6E3; border-top-color: #0E7C6E; animation: kqx .8s linear infinite; }
+@keyframes kqx { to { transform: rotate(360deg); } }
+.kq-nut-hang { text-align: center; margin-top: 16px; }
+.kq-nut-hang button { border: 0; border-radius: 999px; background: #0E7C6E; color: #fff; font: 700 14px var(--font); padding: 11px 26px; cursor: pointer; }
+.kq-nut-hang button:hover { filter: brightness(1.08); }
+@media (max-width: 520px) { .kq-trang { padding: 8px 8px 32px; } .kq-hop { padding: 18px 16px; border-radius: 16px; } }
+@media print {
+  body { background: #fff; }
+  .kq-trang { max-width: none; padding: 0; }
+  .kq-hop { box-shadow: none; padding: 0; border-radius: 0; }
+  .kq-nut-hang { display: none; }
+  @page { size: A4; margin: 14mm 12mm; }
+}

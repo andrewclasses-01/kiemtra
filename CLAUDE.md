@@ -17,6 +17,8 @@ làm lần lượt 3 bài (BT1 cụm số ít · BT2 cụm số nhiều · BT3 t
   Nút PHÓNG TO góc dưới phải mỗi khung (CSS `.kb-khung.phong`, không dời iframe ⇒ không tải lại).
 - `js/phien.js` — phiên Firebase Auth (aword-70dae) + cấp VÉ cho khung AWord (`AWORD:XIN_VE` ⇒ `AWORD:VE`).
 - `css/nw.css`, `assets/`, `js/app-check.js` — chép từ myLesson web.
+- `kq.html` + `js/kq.js` + `css/kq.css` — TRANG PHỤ HUYNH (không đăng nhập): `/kq?c=<mã>` đọc Firestore `ktdvChiaSe/<mã>` bằng REST, dựng bằng `js/ktdv-bc.js`.
+  ⛔ `js/ktdv-bc.js` là BẢN CHÉP của myLesson web `js/ktdv-bc.js` (dashboard dùng chung) — sửa một bên phải chép sang bên kia.
 - Logic làm bài (hướng dẫn, làm thử, lưu tiến độ, lượt dở, khoá đã nộp) nằm ở repo AWord: `kiemtra.js` / `kiemtra.css`.
 
 ## Khám phá quan trọng
