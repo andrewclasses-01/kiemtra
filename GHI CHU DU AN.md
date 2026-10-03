@@ -37,6 +37,7 @@ sau một nút riêng ít dùng; (2) tạo kho riêng để khi gửi kết qu�
 **Lỗi gặp:** hàm tạo mã dùng `Uint8Array` chưa `getRandomValues` ở lượt đầu ⇒ mã toàn "aaaaaaaaaa" — bắt được ở bàn thử kho giả, đã sửa.
 
 ## VIỆC ĐANG CHỜ
-- ⬜ Đăng luật `ktdvChiaSe` (`node tools/dang-luat-ktdv-chiase.js --dang` rồi `--kiem`) + push cả 2 repo (chờ thầy duyệt) — chưa đăng thì nút "Gửi phụ huynh" báo thiếu quyền.
+- ✅ Luật `ktdvChiaSe` đã đăng (ruleset b16182de, `--kiem` 11/11), 2 repo đã push, live kiểm bằng tài liệu thử (đã xoá).
+- ⬜ Thầy thử Gửi phụ huynh bằng tài khoản thầy thật trên dashboard (phiên này chưa đăng nhập thầy được).
 - Thử bằng tài khoản KT đầu vào thật (có vé): làm dở + Làm lại + nộp ⇒ xem dashboard.
 - Thử điện thoại thật (mở link `kq?c=…` trên Zalo/Safari).
