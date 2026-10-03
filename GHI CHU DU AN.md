@@ -74,6 +74,13 @@ sau một nút riêng ít dùng; (2) tạo kho riêng để khi gửi kết qu�
   Chỉ ĐỌC results/ktdvHoSo/assignments, chỉ GHI ktdvBaoCao. Link đã gửi PH KHÔNG tự đổi — thầy đọc lại rồi bấm "Cập nhật link PH". Đã thử --ghi/--go trên hồ sơ giả ZTESTCL (tạo rồi xoá sạch).
 **Cách thầy gọi Claude:** "chấm lại bài kiểm tra đầu vào của <tên> (hoặc ngày D/M)" → Claude chạy `--ds`, `--xuat`, đọc, viết lời giải thích kỹ, `--ghi`.
 
+## Chặng 7 (03/10/2026 tối) — kiểm live + Claude chấm lại bài em Ngọc Ánh (đợt đầu dùng đường `claude-cham-lai.js`)
+- Kiểm live: băm khớp ktdv-ql.js / ktdv-bc.js / config.js / dashboard.html trên andrewclasses.com + ktdv-bc.js ở trang thử và kiemtra; 4 repo (web, kiemtra, myLesson, andrewclasses-thu) 0 lệch origin, 0 file chưa commit; luật `ktdvChiaSe` `--kiem` 11/11.
+- Claude chấm lại em **Ngọc Ánh** (ID NGOCANH20102016, nộp 2/10: BT1 6/40 · BT2 1/20 · BT3 0/50 = 7/110): giữ NGUYÊN đúng/sai của máy (đã soi 103 câu sai: đều sai thật — thiếu a/an, chính tả, bỏ trống, sai nghĩa;
+  đáp án chấp nhận không có câu nào em viết trúng). Ghi 58 lời giải thích kỹ cho mọi câu sai có chữ (câu để trống không viết) + nhận xét ưu điểm / hạn chế + gợi ý, `claudeLuc` 3/10/2026 19:47.
+- Nâng giới hạn lời giải thích 240 → 420 ký tự (`ktdv-ql.js?v=6`, tool `--ghi`), web v1.243.0, `config.js?v=224`.
+- ⬜ Bản link phụ huynh của em này CHƯA tạo (em chưa có token) — thầy mở báo cáo đọc lại rồi bấm "Gửi phụ huynh" khi muốn gửi.
+
 ## VIỆC ĐANG CHỜ
 - ✅ Luật `ktdvChiaSe` đã đăng (ruleset b16182de, `--kiem` 11/11), 2 repo đã push, live kiểm bằng tài liệu thử (đã xoá).
 - ⬜ Thầy thử Gửi phụ huynh bằng tài khoản thầy thật trên dashboard (phiên này chưa đăng nhập thầy được).
