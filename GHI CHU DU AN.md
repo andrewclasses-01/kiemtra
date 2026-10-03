@@ -49,6 +49,17 @@ sau một nút riêng ít dùng; (2) tạo kho riêng để khi gửi kết qu�
   Nháp chỉ là so chữ, không hiểu ngữ pháp sâu như lời Claude viết trong Excel (vd "chủ ngữ số nhiều phải dùng are") ⇒ thầy nên đọc lại câu sai trước khi gửi.
 **VIỆC ĐANG CHỜ:** thầy dùng thử trên dashboard thật + đọc lại nháp giải thích; có thể muốn Claude viết lời giải thích kỹ cho từng em (như skill kiemtradauvao) rồi đổ vào `ghiChu`.
 
+## Chặng 5 (03/10/2026 chiều) — CHẤM CHI TIẾT TỰ ĐỘNG câu sai (không cần gọi Claude)
+**Thầy:** học sinh làm xong, mở dashboard là có kết quả chấm chi tiết luôn; thêm phần chấm chi tiết tự động rồi cho xem kết quả em đã nộp hôm trước.
+**Đã làm (`js/ktdv-bc.js?v=3`, `js/ktdv-ql.js?v=4`):**
+- `goiY` viết lại: nhận ra để trống · lệch quá nhiều ý · sai chính tả (cả khi cùng lúc sai nhiều chỗ) · sai/thiếu/thừa a/an · số ít–số nhiều (kể cả bất quy tắc foot/feet…) ·
+  thêm/bớt "s" động từ · sai thì quá khứ (help→helped, sleep→slept…) · sai/thiếu "to be" · thiếu did/do/does/will/have/has/had/been/can/to · thiếu từ chỉ thời gian · dạng từ.
+  Ghép từng cặp (con viết ↔ đáp án) rồi giải thích; lời trùng được gộp; tối đa 3 ý/câu.
+- "Tạo nháp nhận xét": giờ nêu NHÓM LỖI CHÍNH có đếm ("chủ yếu do thiếu a/an (25 câu), để trống (6 câu)…") thay vì chép 3 ví dụ (ví dụ đã nằm ở bảng từng câu).
+- Đo trên dữ liệu THẬT em Ngọc Ánh nộp 2/10 (103 câu sai): đa số ra lời cụ thể; ~4 câu lệch quá nhiều ra câu "dịch chưa đúng ý — đối chiếu đáp án".
+  Dữ liệu đọc bằng khoá quản trị, CHỈ ĐỌC; bàn thử kho giả chạy đúng `ktdv-ql.js` với dữ liệu thật (file thử đã xoá, không commit).
+**Giới hạn:** `correctText` chỉ là đáp án đầu trong danh sách chấp nhận ⇒ em viết từ đồng nghĩa (usually ↔ often) bị chấm sai và lời giải thích nói "đáp án dùng …" — thầy bấm Chi tiết giáo viên đổi Đúng/Sai khi cần.
+
 ## VIỆC ĐANG CHỜ
 - ✅ Luật `ktdvChiaSe` đã đăng (ruleset b16182de, `--kiem` 11/11), 2 repo đã push, live kiểm bằng tài liệu thử (đã xoá).
 - ⬜ Thầy thử Gửi phụ huynh bằng tài khoản thầy thật trên dashboard (phiên này chưa đăng nhập thầy được).
