@@ -81,7 +81,27 @@ sau một nút riêng ít dùng; (2) tạo kho riêng để khi gửi kết qu�
 - Nâng giới hạn lời giải thích 240 → 420 ký tự (`ktdv-ql.js?v=6`, tool `--ghi`), web v1.243.0, `config.js?v=224`.
 - Link phụ huynh của em này ĐÃ gửi (token h7pkwfbx8z).
 
+## Chặng 8 (05/10/2026) — THỬ host trên Firebase Hosting (song song GitHub Pages, CHƯA đổi DNS)
+**Thầy:** hỏi GitHub Pro có lợi gì, web có nhanh hơn không, chuyển host sang Google thì sao ⇒ thử `kiemtra` trước. Thầy đã có Firebase Blaze.
+**Đã làm (repo KHÔNG đổi gì, chỉ thêm chặng này):**
+- Firebase CLI máy 1 đã đăng nhập sẵn (namdaptrai01@gmail.com, có quyền `aword-70dae`). Tạo site Hosting **`ac-kiemtra`** trong dự án `aword-70dae` ⇒ https://ac-kiemtra.web.app
+  (site mặc định `aword-70dae.web.app` để trống, không dùng — mỗi web sẽ một site riêng `ac-<tên>`).
+- Bản đưa lên = `git archive HEAD` BỎ `CLAUDE.md`, `GHI CHU DU AN.md`, `README.md`, `CNAME` (trên Firebase 2 file hồ sơ trả 404; GitHub Pages vẫn trả 200 = đang lộ).
+  Thư mục đưa lên ở scratchpad phiên (tạm) — `firebase.json` dùng:
+  `{"hosting":{"site":"ac-kiemtra","public":"public","cleanUrls":true,"headers":[ ** nosniff · **/*.html + "/" + /@(kq|bai|index) no-cache · /@(js|css)/** max-age=3600 · /assets/** max-age=604800 ]}}` + `.firebaserc` default aword-70dae.
+  Lệnh: `npx -y firebase-tools@latest deploy --only hosting --project aword-70dae`.
+- Kiểm: nội dung 3 trang + JS/CSS khớp băm với bản GitHub Pages (bỏ CR); `cleanUrls` ⇒ `/bai.html?x=1` 301 → `/bai?x=1` giữ tham số; `/kq?c=` 200; trang đăng nhập mở sạch, 0 lỗi console.
+- **Đo tốc độ** (máy 1, 5 lượt × 11 file): GitHub Pages tổng 1,1–2,8 s · Firebase 1,0–4,8 s (1 lượt nghẽn) ⇒ **NGANG NHAU** — cả hai đều do Fastly trạm Singapore (`cache-sin-*`) phát.
+  Lợi thật của Firebase = tự đặt cache (GitHub ép max-age=600 mọi file) + giấu được hồ sơ/mã khi repo về riêng tư; KHÔNG nhanh hơn.
+**Lưu ý khi đổi hẳn:** trên `ac-kiemtra.web.app` học sinh KHÔNG làm bài được — AWord `core/assignments.js` `VE_NGUON` chỉ nhận `https://kiemtra.andrewclasses.com`
+(+ reCAPTCHA App Check chỉ có tên miền andrewclasses.com). Muốn chạy thật phải GIỮ tên miền: Firebase Console › Hosting › ac-kiemtra › Add custom domain `kiemtra.andrewclasses.com`
+⇒ sửa bản ghi DNS ở vclouddns (NS laocai/sapa.vclouddns.com) theo Firebase chỉ; xoá Pages bên GitHub sau khi chạy ổn. Quay lui = trả DNS về 185.199.108–111.153.
+
+**Tiếp (05/10/2026 tối):** cách đo + tăng tốc thật sự (đo `?do=1` trên máy thật, WebKit + máy chủ chậm, bỏ lượt đọc Firestore thừa, thu gọn mã khi xuất bản) ghi ở **AWord `docs/TOI-UU-TOC-DO-WEB.md`** + công cụ `tools/toc-do/` (repo AWord). Kết luận cho kiemtra: đổi host KHÔNG làm nhanh hơn; muốn nhanh ⇒ đo `?do=1` trên máy em rồi theo sổ tay.
+
 ## VIỆC ĐANG CHỜ
+- ⬜ Muốn kiemtra nhanh hơn ⇒ đo `?do=1` trên máy thật theo AWord `docs/TOI-UU-TOC-DO-WEB.md` (chưa chép do-tai.js sang đây).
+- ⬜ (Chặng 8) Thầy quyết có chuyển hẳn kiemtra sang Firebase Hosting không: nếu có ⇒ thêm tên miền riêng + sửa DNS vclouddns + đưa `firebase.json` vào repo + repo về riêng tư (nhớ: `deploy` thay cho push-là-live). Nếu không ⇒ `firebase hosting:disable --site ac-kiemtra`.
 - ✅ Luật `ktdvChiaSe` đã đăng (ruleset b16182de, `--kiem` 11/11), 2 repo đã push, live kiểm bằng tài liệu thử (đã xoá).
 - ⬜ Thầy thử Gửi phụ huynh bằng tài khoản thầy thật trên dashboard (phiên này chưa đăng nhập thầy được).
 - Thử bằng tài khoản KT đầu vào thật (có vé): làm dở + Làm lại + nộp ⇒ xem dashboard.
