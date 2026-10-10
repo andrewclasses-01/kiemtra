@@ -16,10 +16,10 @@
     B: { trang: 'kiemtra2.html', bai: [
       { code: 'x98bsj', ma: 'P1', ten: 'Chọn từ đúng', n: 30 },
       { code: 'xxdvu5', ma: 'P2', ten: 'Gõ từ tiếng Anh', n: 30 },
-      { code: 'g3wh9q', ma: 'P3', ten: 'A hay An', n: 20 },
-      { code: 'p3xryn', ma: 'P4', ten: 'Số ít, số nhiều', n: 20 },
-      { code: 'zwfvda', ma: 'P5', ten: 'Tạo câu', n: 15 },
-      { code: 'ct632d', ma: 'P6', ten: 'Trí nhớ nhanh', n: 10 }] }
+      { code: 'g3wh9q', ma: 'P3', ten: 'A, an hay không đếm được', n: 30 },
+      { code: 'p3xryn', ma: 'P4', ten: 'Số ít, số nhiều', n: 30 },
+      { code: 'zwfvda', ma: 'P5', ten: 'Tạo câu', n: 20 },
+      { code: 'ct632d', ma: 'P6', ten: 'Nghe - hiểu - ghi nhớ', n: 10 }] }
   };
   var BAI = BO_DE.A.bai, TRANG = BO_DE.A.trang;
   var $ = function (s) { return document.querySelector(s); };
