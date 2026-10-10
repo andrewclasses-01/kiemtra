@@ -76,3 +76,13 @@ body.kb-dang-phong{overflow:hidden}
   .kb-em span{display:none}
   .kb-phan-ten{flex-wrap:nowrap} .kb-phan-dau h2{font-size:16px; min-width:0} .kb-phan-dau h2 small{display:none}
 }
+
+/* ===== 10/10/2026 màn CHỜ thầy phát bài ===== */
+.kb-cho{background:#fff; border-radius:24px; padding:40px 24px; margin-top:20px; text-align:center; box-shadow:0 6px 24px rgba(16,40,40,.06); display:flex; flex-direction:column; align-items:center; gap:6px}
+.kb-cho .kb-av{width:84px; height:84px; font-size:32px}
+.kb-cho-dong{font-size:44px; line-height:1; animation:kb-xoay 2.4s ease-in-out infinite}
+@keyframes kb-xoay{0%,40%{transform:rotate(0)} 50%,90%{transform:rotate(180deg)} 100%{transform:rotate(180deg)}}
+.kb-cho h1{margin:8px 0 0; font-size:24px}
+.kb-cho h2{margin:4px 0 0; font-size:22px; color:var(--accent)}
+.kb-cho p{margin:0; font-size:17px; font-weight:700}
+.kb-cho p.nho{margin-top:10px; font-size:13.5px; font-weight:600; color:var(--muted)}

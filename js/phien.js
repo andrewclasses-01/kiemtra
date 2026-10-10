@@ -55,7 +55,8 @@
     var r = await u.getIdTokenResult(!!epMoi);
     var c = r.claims || {};
     if (c.ktdv !== true || !c.ma) return null;
-    return { u: u, ma: String(c.ma), ten: u.displayName || '', anh: u.photoURL || '' };
+    // ⭐ 10/10/2026 — `phat` = bộ đề thầy đã PHÁT ('A' | 'B'); trống ⇒ em phải chờ (bai.js hiện màn chờ, hỏi lại token)
+    return { u: u, ma: String(c.ma), ten: u.displayName || '', anh: u.photoURL || '', phat: c.phat === 'A' || c.phat === 'B' ? c.phat : '' };
   }
   async function dangNhap(ma, mk) {
     var f = await fb();
