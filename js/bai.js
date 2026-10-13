@@ -19,7 +19,17 @@
       { code: 'g3wh9q', ma: 'P3', ten: 'A, an hay không đếm được', n: 30 },
       { code: 'p3xryn', ma: 'P4', ten: 'Số ít, số nhiều', n: 30 },
       { code: 'zwfvda', ma: 'P5', ten: 'Tạo câu', n: 20 },
-      { code: 'ct632d', ma: 'P6', ten: 'Nghe - hiểu - ghi nhớ', n: 10 }] }
+      { code: 'ct632d', ma: 'P6', ten: 'Nghe - hiểu - ghi nhớ', n: 10 }] },
+    // ⭐ 13/10/2026 — C = bộ B1, 8 phần (AWord kiemtra2.html Đợt 510: 7 phần ngữ pháp + NGHE, mỗi PART nghe 2 lần)
+    C: { trang: 'kiemtra2.html', bai: [
+      { code: 'fqdmhq', ma: 'C1', ten: 'Thì động từ', n: 25 },
+      { code: 'dyabv6', ma: 'C2', ten: 'Câu điều kiện', n: 10 },
+      { code: '6tu6ek', ma: 'C3', ten: 'Câu bị động', n: 10 },
+      { code: 'kfxhr5', ma: 'C4', ten: 'So / too / either / neither', n: 10 },
+      { code: 'hrg835', ma: 'C5', ten: 'Mệnh đề quan hệ', n: 10 },
+      { code: 'qhrw3f', ma: 'C6', ten: 'Câu tường thuật', n: 10 },
+      { code: 'x4mwdz', ma: 'C7', ten: 'Dịch câu', n: 15 },
+      { code: 'egs7pp', ma: 'C8', ten: 'Nghe', n: 25 }] }
   };
   var BAI = BO_DE.A.bai, TRANG = BO_DE.A.trang;
   var $ = function (s) { return document.querySelector(s); };
