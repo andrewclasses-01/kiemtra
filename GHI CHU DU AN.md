@@ -126,6 +126,7 @@ sau một nút riêng ít dùng; (2) tạo kho riêng để khi gửi kết qu�
 - An toàn: chỉ đụng màn chờ — đường làm bài/lưu/nộp (AWord) KHÔNG đổi, KHÔNG thêm lượt đọc/ghi kho; em đang làm bài giữ mã cũ trong bộ nhớ, không bị gì.
 - `phien.js?v=4` (bai.html + index.html) · `bai.js?v=6`. Bàn thử mới: `bai.html?thu=1&cho=2` = giả phát bộ lạ ⇒ sau 5 s đổi chữ.
 - Thử (kiemtra-site cổng 8135): `cho=1` không còn dòng tự tải · `cho=2` sau 6 s ra "Thầy đã phát bài / Em hãy tải lại trang hoặc bấm F5" · `bo=C` vẫn dựng 8 phần, console 0 lỗi.
+- 🔚 Phiên đóng 14/10/2026 (thầy: "ok kết thúc phiên"). kiemtra `7ec9942` LIVE · myLesson `fc97322` · myLesson Web `a82c328` — cả 3 đã push, 0 file chưa commit.
 
 ## VIỆC ĐANG CHỜ
 - ✅ (Chặng 9) Màn chờ báo "Thầy đã phát bài, em hãy tải lại trang hoặc bấm F5" khi phát bộ trang chưa biết — ĐÃ LÀM 14/10 tối.
