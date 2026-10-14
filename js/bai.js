@@ -58,16 +58,26 @@
     $('#em').innerHTML = av() + '<span>' + E(EM.ten) + '</span>';
     $('#than').innerHTML = '<section class="kb-cho"><div class="kb-cho-dong">⏳</div>' + av('lon') +
       '<h1>Chào ' + E(EM.ten) + '!</h1><h2>Bài kiểm tra chưa được mở</h2><p>Em hãy chờ thầy Andrew nhé!</p>' +
-      '<p class="nho">Khi thầy mở bài, trang này sẽ tự hiện bài kiểm tra — em không cần tải lại.</p></section>';
+      '</section>';
+    // ⭐ 14/10/2026 — thầy bỏ dòng "tự hiện, không cần tải lại". Đã có claim phat mà trang KHÔNG biết bộ đó (sót bộ mới ở phien.js/bai.js)
+    //   ⇒ báo F5 thay vì chờ mãi im lặng. Bộ đã biết thì vẫn tự mở như cũ.
+    if (p && p.phatTho) return veTaiLai();
     clearTimeout(henCho);
     var hoi = function () {
       P.phien(true).then(function (q) {
         if (!q) { location.replace('index.html'); return; }
         if (q.phat) { chonBo(q.phat); veTrang(); return; }
+        if (q.phatTho) { veTaiLai(); return; }
         henCho = setTimeout(hoi, 5000);
       })['catch'](function () { henCho = setTimeout(hoi, 8000); });
     };
     henCho = setTimeout(hoi, 5000);
+  }
+  function veTaiLai() {
+    clearTimeout(henCho);
+    var h2 = document.querySelector('.kb-cho h2'), p1 = document.querySelector('.kb-cho h2 + p');
+    if (h2) h2.textContent = 'Thầy đã phát bài';
+    if (p1) p1.textContent = 'Em hãy tải lại trang hoặc bấm F5';
   }
 
   function veTrang() {
@@ -149,8 +159,8 @@
     P.thoat()['catch'](function () { }).then(function () { location.replace('index.html'); });
   };
 
-  // bàn thử trên máy (không đăng nhập): &bo=A|B chọn bộ đề, &cho=1 xem màn chờ
-  if (THU) { EM = { ma: 'ZTESTKT', ten: 'Minh Thư', anh: '' }; var qt = new URLSearchParams(location.search); if (qt.get('cho') === '1') { $('#em').innerHTML = av() + '<span>' + E(EM.ten) + '</span>'; P.phien = function () { return Promise.resolve({ phat: '' }); }; veCho(); return; } chonBo(qt.get('bo') || 'A'); veTrang(); return; }
+  // bàn thử trên máy (không đăng nhập): &bo=A|B|C chọn bộ đề, &cho=1 xem màn chờ, &cho=2 màn chờ khi phát bộ lạ (báo F5)
+  if (THU) { EM = { ma: 'ZTESTKT', ten: 'Minh Thư', anh: '' }; var qt = new URLSearchParams(location.search); if (qt.get('cho') === '1') { $('#em').innerHTML = av() + '<span>' + E(EM.ten) + '</span>'; P.phien = function () { return Promise.resolve({ phat: '' }); }; veCho(); return; } if (qt.get('cho') === '2') { P.phien = function () { return Promise.resolve({ phat: '', phatTho: 'Z' }); }; veCho(); return; } chonBo(qt.get('bo') || 'A'); veTrang(); return; }
   P.phien().then(function (p) {
     if (!p) { location.replace('index.html'); return; }
     return p.u.reload()['catch'](function () { }).then(function () {

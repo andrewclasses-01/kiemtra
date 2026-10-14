@@ -29,7 +29,7 @@ Chưa phát ⇒ em thấy màn chờ "Bài kiểm tra chưa được mở", tran
   1. kiemtra `js/bai.js` BO_DE · 2. kiemtra `js/phien.js` (lọc claim `phat`) · 3. myLesson Web `js/ktdv-ql.js` BO_DE · 4. myLesson Web `tools/claude-cham-lai.js` BO_DE ·
   5. myLesson `may-chu/functions/ktdv.js` BO_DE (+ deploy function) · 6. myLesson `may-chu/functions/xoa-ktdv-thu.js` CODES. Trang thử andrewclasses-thu chép bằng `dong-bo-trang-thu.py`.
   Rà: grep một mã bài bộ cũ (vd `x98bsj`) ở cả 3 repo. Thử bằng ĐƯỜNG THẬT (tài khoản thử → PHÁT → đăng nhập kiemtra), vì `bai.html?thu=1&bo=X` bỏ qua `phien.js`.
-- Dashboard "Đã phát" mà em vẫn ở màn chờ ⇒ soi `phien.js` trước. Sửa JS trang này thì em đang mở trang phải F5 (màn chờ không tự tải mã mới).
+- Dashboard "Đã phát" mà em vẫn ở màn chờ ⇒ soi `phien.js` trước. Sửa JS trang này thì em đang mở trang phải F5 (màn chờ không tự tải mã mới). Phát bộ trang chưa biết ⇒ màn chờ tự báo "Thầy đã phát bài, em hãy tải lại trang hoặc bấm F5" (`phatTho`).
 - Nút phóng to nằm ĐÈ lên góc khung ⇒ AWord `kiemtra.css` dồn hàng nút hướng dẫn sang trái khi khung ≤820px. Đổi chỗ nút thì sửa cả bên đó.
 - Repo dùng CRLF; `sed -i` trên Git Bash làm mất CRLF — sửa bằng Edit/Python `wb`.
 

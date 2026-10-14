@@ -119,9 +119,16 @@ sau một nút riêng ít dùng; (2) tạo kho riêng để khi gửi kết qu�
    Thêm bộ mới ⇒ phải thử: tạo tài khoản thử trên dashboard → PHÁT bộ mới → đăng nhập kiemtra thật ⇒ thấy bài mở → xoá bằng `xoa-ktdv-thu.js`.
 4. **Sửa JS trang kiemtra thì em đang mở trang KHÔNG tự nhận** (mã cũ nằm trong bộ nhớ, màn chờ chỉ hỏi lại token) ⇒ luôn dặn thầy cho em F5.
 
+**Tiếp (14/10 tối, lúc em ĐANG làm bài — thầy dặn: không được ảnh hưởng/nghẽn kết quả):** thầy duyệt đề xuất màn chờ, đổi lời.
+- Bỏ dòng nhỏ "Khi thầy mở bài, trang này sẽ tự hiện bài kiểm tra — em không cần tải lại." ở màn chờ.
+- Có claim `phat` mà trang KHÔNG biết bộ đó (`phien.js` trả thêm `phatTho` = chữ thô của claim) ⇒ đổi màn chờ thành **"Thầy đã phát bài" / "Em hãy tải lại trang hoặc bấm F5"**
+  và NGỪNG hỏi lại token (`veTaiLai()` trong bai.js). Bộ đã biết (A/B/C) vẫn TỰ MỞ như cũ. Áp cả lúc mới vào trang lẫn lúc đang chờ.
+- An toàn: chỉ đụng màn chờ — đường làm bài/lưu/nộp (AWord) KHÔNG đổi, KHÔNG thêm lượt đọc/ghi kho; em đang làm bài giữ mã cũ trong bộ nhớ, không bị gì.
+- `phien.js?v=4` (bai.html + index.html) · `bai.js?v=6`. Bàn thử mới: `bai.html?thu=1&cho=2` = giả phát bộ lạ ⇒ sau 5 s đổi chữ.
+- Thử (kiemtra-site cổng 8135): `cho=1` không còn dòng tự tải · `cho=2` sau 6 s ra "Thầy đã phát bài / Em hãy tải lại trang hoặc bấm F5" · `bo=C` vẫn dựng 8 phần, console 0 lỗi.
+
 ## VIỆC ĐANG CHỜ
-- ⬜ (Chặng 9, ĐỀ XUẤT chưa làm) Màn chờ phân biệt "claim `phat` có mà trang không biết bộ đó" với "chưa phát": hiện "Thầy đã phát bài nhưng trang cần cập nhật — em bấm F5 / báo thầy"
-  thay vì chờ mãi ⇒ lần sau sót kiểu này sẽ LỘ ngay chứ không im lặng. Cần `phien.js` trả thêm chữ thô `c.phat`.
+- ✅ (Chặng 9) Màn chờ báo "Thầy đã phát bài, em hãy tải lại trang hoặc bấm F5" khi phát bộ trang chưa biết — ĐÃ LÀM 14/10 tối.
 - ⬜ Muốn kiemtra nhanh hơn ⇒ đo `?do=1` trên máy thật theo AWord `docs/TOI-UU-TOC-DO-WEB.md` (chưa chép do-tai.js sang đây).
 - ⬜ (Chặng 8) Thầy quyết có chuyển hẳn kiemtra sang Firebase Hosting không: nếu có ⇒ thêm tên miền riêng + sửa DNS vclouddns + đưa `firebase.json` vào repo + repo về riêng tư (nhớ: `deploy` thay cho push-là-live). Nếu không ⇒ `firebase hosting:disable --site ac-kiemtra`.
 - ✅ Luật `ktdvChiaSe` đã đăng (ruleset b16182de, `--kiem` 11/11), 2 repo đã push, live kiểm bằng tài liệu thử (đã xoá).
