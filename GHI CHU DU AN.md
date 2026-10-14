@@ -105,9 +105,23 @@ sau một nút riêng ít dùng; (2) tạo kho riêng để khi gửi kết qu�
 ⇒ claim `phat:'C'` bị coi là trống ⇒ màn chờ hỏi lại token mãi. Mọi em được phát bộ C từ 13/10 đều kẹt.
 **Đã sửa:** `phien.js` nhận `/^[ABC]$/` (kèm chú thích: thêm bộ mới phải thêm chữ vào đây) · `phien.js?v=3` ở `bai.html` + `index.html`.
 ⚠️ Trang em ĐANG MỞ vẫn chạy phien.js cũ trong bộ nhớ ⇒ em phải tải lại trang (F5) một lần.
-**Bài học:** bộ đề mới phải sửa ĐỦ 4 chỗ: kiemtra `bai.js` BO_DE + `phien.js` (lọc claim) · myLesson Web `ktdv-ql.js` BO_DE · máy chủ `functions/ktdv.js` BO_DE.
+**Kết quả:** đẩy `79c25a6`, live sau ~30 s (curl thấy `[ABC]` + `phien.js?v=3`). Thầy cho em F5 ⇒ **em VÀO ĐƯỢC** (thầy xác nhận).
+
+**Rà lại sau sửa (thầy yêu cầu ghi bài học):** grep mã bài `x98bsj`/`fqdmhq` ở mọi repo ⇒ bộ đề thật ra khai ở **6 chỗ** (không phải 4), và tìm thêm **một chỗ sót nữa**:
+`myLesson/may-chu/functions/xoa-ktdv-thu.js` CODES chỉ có mã bộ A + B ⇒ xoá tài khoản thử từng làm bộ C sẽ bỏ sót results/scores/practiceLog bộ C. Đã thêm 8 mã C.
+Đã chép DANH SÁCH 6 CHỖ thành chú thích ⛔ ngay tại từng chỗ khai bộ đề (bai.js, ktdv-ql.js, claude-cham-lai.js, functions/ktdv.js) ⇒ ai sửa chỗ nào cũng thấy 5 chỗ còn lại.
+
+**⭐ BÀI HỌC / KINH NGHIỆM:**
+1. **Thêm một giá trị vào tập hợp (bộ đề, loại, trạng thái…) ⇒ đừng chỉ sửa chỗ KHAI, phải tìm mọi chỗ LỌC/SO giá trị đó.** Chỗ khai (BO_DE) thì nhớ; chỗ lọc (`=== 'A' || === 'B'`)
+   nằm ở file khác, tên khác, nên sót. Cách rà chắc ăn: `grep` một giá trị CŨ (mã bài `x98bsj`, chữ `'B'`) ở CẢ 3 repo (kiemtra, myLesson Web, myLesson) — chỗ nào có giá trị cũ mà chưa có giá trị mới là chỗ sót.
+2. **Lỗi này IM LẶNG:** màn chờ coi "bộ lạ" giống hệt "chưa phát" ⇒ không báo lỗi, dashboard vẫn xanh "Đã phát". Dấu hiệu nhận biết: **dashboard "Đã phát" mà trang em vẫn chờ** ⇒ soi `phien.js` đầu tiên.
+3. **Thử đường THẬT cho bộ mới:** chặng thêm bộ C chỉ thử bằng bàn thử `bai.html?thu=1&bo=C` — đường thử BỎ QUA `phien.js` (chọn bộ thẳng từ URL) nên không bắt được lỗi.
+   Thêm bộ mới ⇒ phải thử: tạo tài khoản thử trên dashboard → PHÁT bộ mới → đăng nhập kiemtra thật ⇒ thấy bài mở → xoá bằng `xoa-ktdv-thu.js`.
+4. **Sửa JS trang kiemtra thì em đang mở trang KHÔNG tự nhận** (mã cũ nằm trong bộ nhớ, màn chờ chỉ hỏi lại token) ⇒ luôn dặn thầy cho em F5.
 
 ## VIỆC ĐANG CHỜ
+- ⬜ (Chặng 9, ĐỀ XUẤT chưa làm) Màn chờ phân biệt "claim `phat` có mà trang không biết bộ đó" với "chưa phát": hiện "Thầy đã phát bài nhưng trang cần cập nhật — em bấm F5 / báo thầy"
+  thay vì chờ mãi ⇒ lần sau sót kiểu này sẽ LỘ ngay chứ không im lặng. Cần `phien.js` trả thêm chữ thô `c.phat`.
 - ⬜ Muốn kiemtra nhanh hơn ⇒ đo `?do=1` trên máy thật theo AWord `docs/TOI-UU-TOC-DO-WEB.md` (chưa chép do-tai.js sang đây).
 - ⬜ (Chặng 8) Thầy quyết có chuyển hẳn kiemtra sang Firebase Hosting không: nếu có ⇒ thêm tên miền riêng + sửa DNS vclouddns + đưa `firebase.json` vào repo + repo về riêng tư (nhớ: `deploy` thay cho push-là-live). Nếu không ⇒ `firebase hosting:disable --site ac-kiemtra`.
 - ✅ Luật `ktdvChiaSe` đã đăng (ruleset b16182de, `--kiem` 11/11), 2 repo đã push, live kiểm bằng tài liệu thử (đã xoá).

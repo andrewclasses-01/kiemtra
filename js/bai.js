@@ -1,5 +1,5 @@
 /* bai.js — TRANG LÀM BÀI KIỂM TRA ĐẦU VÀO: tên em + các phần của BỘ ĐỀ thầy phát, mỗi phần là một khung AWord (Đợt 440).
-   ⭐ 10/10/2026 — HAI BỘ ĐỀ + PHÁT BÀI: thầy bấm PHÁT BÀI ở dashboard (hàm qlKtdv.phat ⇒ claim `phat` = 'A' | 'B').
+   ⭐ 10/10/2026 — HAI BỘ ĐỀ + PHÁT BÀI: thầy bấm PHÁT BÀI ở dashboard (hàm qlKtdv.phat ⇒ claim `phat` = 'A' | 'B' | 'C').
      Chưa phát ⇒ màn "Bài kiểm tra chưa được mở, em hãy chờ thầy Andrew nhé!" + hỏi lại token mỗi 5 giây (tự mở, không tải lại).
      A = bộ cũ 3 phần (AWord kiemtra.html) · B = bộ lớp 3–4, 6 phần (AWord kiemtra2.html: giờ từng câu, Quiz, hình, phim).
    Làm lần lượt: phần sau mở khi phần trước xong. AWord báo {type:'AWORD:KT', code, trangThai:'chua'|'dang-lam'|'xong'}.
@@ -8,6 +8,7 @@
   'use strict';
   var P = window.KTP;
   // ⛔ PHẢI khớp dashboard myLesson `js/ktdv-ql.js` BO_DE (mã bài giao AWord, Courses / KIEM TRA DAU VAO).
+  // ⛔ THÊM BỘ ĐỀ MỚI ⇒ sửa ĐỦ 6 chỗ (14/10/2026 quên phien.js ⇒ em được phát bộ C kẹt mãi màn chờ): kiemtra js/bai.js BO_DE · kiemtra js/phien.js (lọc claim phat) · myLesson Web js/ktdv-ql.js BO_DE · myLesson Web tools/claude-cham-lai.js BO_DE · myLesson may-chu/functions/ktdv.js BO_DE (+ deploy) · may-chu/functions/xoa-ktdv-thu.js CODES. Rà bằng grep một mã bài bộ cũ (vd x98bsj) ở cả 3 repo.
   var BO_DE = {
     A: { trang: 'kiemtra.html', bai: [
       { code: '5576de', ma: 'BT1', ten: 'Tạo cụm số ít', n: 40 },
