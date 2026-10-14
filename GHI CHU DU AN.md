@@ -99,6 +99,14 @@ sau một nút riêng ít dùng; (2) tạo kho riêng để khi gửi kết qu�
 
 **Tiếp (05/10/2026 tối):** cách đo + tăng tốc thật sự (đo `?do=1` trên máy thật, WebKit + máy chủ chậm, bỏ lượt đọc Firestore thừa, thu gọn mã khi xuất bản) ghi ở **AWord `docs/TOI-UU-TOC-DO-WEB.md`** + công cụ `tools/toc-do/` (repo AWord). Kết luận cho kiemtra: đổi host KHÔNG làm nhanh hơn; muốn nhanh ⇒ đo `?do=1` trên máy em rồi theo sổ tay.
 
+## Chặng 9 (14/10/2026 tối) — SỬA LỖI: phát Bộ B1 (C) mà em vẫn kẹt màn chờ · phiên máy MSI
+**Thầy:** phát bài Bộ B1 cho em Gia Thịnh (dashboard hiện "Đã phát · Bộ B1 (8 phần, có nghe)" 19:24) nhưng máy em vẫn "Bài kiểm tra chưa được mở".
+**Nguyên nhân:** chặng thêm bộ C (`364c131`, 13/10) sửa `bai.js` BO_DE + máy chủ `ktdv.js` (BO_DE ['A','B','C']) nhưng QUÊN `js/phien.js`: dòng trả `phat` chỉ nhận `'A' || 'B'`
+⇒ claim `phat:'C'` bị coi là trống ⇒ màn chờ hỏi lại token mãi. Mọi em được phát bộ C từ 13/10 đều kẹt.
+**Đã sửa:** `phien.js` nhận `/^[ABC]$/` (kèm chú thích: thêm bộ mới phải thêm chữ vào đây) · `phien.js?v=3` ở `bai.html` + `index.html`.
+⚠️ Trang em ĐANG MỞ vẫn chạy phien.js cũ trong bộ nhớ ⇒ em phải tải lại trang (F5) một lần.
+**Bài học:** bộ đề mới phải sửa ĐỦ 4 chỗ: kiemtra `bai.js` BO_DE + `phien.js` (lọc claim) · myLesson Web `ktdv-ql.js` BO_DE · máy chủ `functions/ktdv.js` BO_DE.
+
 ## VIỆC ĐANG CHỜ
 - ⬜ Muốn kiemtra nhanh hơn ⇒ đo `?do=1` trên máy thật theo AWord `docs/TOI-UU-TOC-DO-WEB.md` (chưa chép do-tai.js sang đây).
 - ⬜ (Chặng 8) Thầy quyết có chuyển hẳn kiemtra sang Firebase Hosting không: nếu có ⇒ thêm tên miền riêng + sửa DNS vclouddns + đưa `firebase.json` vào repo + repo về riêng tư (nhớ: `deploy` thay cho push-là-live). Nếu không ⇒ `firebase hosting:disable --site ac-kiemtra`.
