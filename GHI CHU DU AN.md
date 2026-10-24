@@ -128,6 +128,11 @@ sau một nút riêng ít dùng; (2) tạo kho riêng để khi gửi kết qu�
 - Thử (kiemtra-site cổng 8135): `cho=1` không còn dòng tự tải · `cho=2` sau 6 s ra "Thầy đã phát bài / Em hãy tải lại trang hoặc bấm F5" · `bo=C` vẫn dựng 8 phần, console 0 lỗi.
 - 🔚 Phiên đóng 14/10/2026 (thầy: "ok kết thúc phiên"). kiemtra `7ec9942` LIVE · myLesson `fc97322` · myLesson Web `a82c328` — cả 3 đã push, 0 file chưa commit.
 
+## Chặng 10 (24/10/2026) — Chặn phím tắt xem mã (`js/chan-phim.js`) · phiên máy MSI
+- Thầy chốt chỉ chặn phím tắt, giữ copy (cùng đợt myLesson web v1.413.0 + AWord Đợt 582).
+- Chặn: F12 · Ctrl/Cmd+U · Ctrl/Cmd+S · Ctrl+Shift+I/J/C/K · Mac Cmd+Opt+I/J/C/U (keydown pha capture, preventDefault). KHÔNG chặn bôi đen / copy / chuột phải. File là BẢN CHÉP của myLesson Web `js/chan-phim.js` (web v1.413.0) — sửa bản gốc rồi chép lại sang 4 kho (AWord/web core/ · kiemtra js/ · nentangtienganh / · myDocument _chung/). ⛔ Không phải bảo mật: `view-source:` gõ tay, menu trình duyệt, tắt JS, curl vẫn xem được.
+- Gắn trước `</head>` 3 trang: index · bai · kq (`js/chan-phim.js?v=1`). Kiểm: thẻ script trỏ đúng file; cùng file đã thử trên AWord/myLesson.
+
 ## VIỆC ĐANG CHỜ
 - ✅ (Chặng 9) Màn chờ báo "Thầy đã phát bài, em hãy tải lại trang hoặc bấm F5" khi phát bộ trang chưa biết — ĐÃ LÀM 14/10 tối.
 - ⬜ Muốn kiemtra nhanh hơn ⇒ đo `?do=1` trên máy thật theo AWord `docs/TOI-UU-TOC-DO-WEB.md` (chưa chép do-tai.js sang đây).
